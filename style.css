@@ -1,28 +1,626 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #f4f4f4;
+    background: linear-gradient(to bottom, #222, #333);
 }
 
-header {
+/* General Section Styling */
+section {
+    width: 100%;
+    padding: 70px 20px;
+    margin: 5px 0;
+    background-color: rgb(46, 35, 35);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Adjusting Specific Sections */
+#about, #skills, #education, #projects, #cv, #contact {
+    padding: 70px 20px;
+    margin-top: 1px;
+}
+
+/* Navigation Styles */
+nav {
+    background: #222;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px 0;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation List */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navigation Items */
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* ✅ Hamburger Menu Styling */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 1100;
+}
+
+/* ✅ Mobile Navigation - Minimized Spacing & Closer to Menu Bar */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 8px; /* Moves menu icon slightly up */
+        left: 8px; /* Moves menu icon closer to the edge */
+        z-index: 1100;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        left: 5px; /* Aligns closer to the menu button */
+        top: 40px; /* Brings menu even closer to the 3-bar */
+        width: 140px; /* Further reduced menu width */
+        background: #222;
+        padding-top: 5px; /* Minimizes top padding */
+        text-align: left;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 1px 2px; /* Further reduced spacing */
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 4px 8px; /* Minimal padding */
+        font-size: 0.8rem; /* Slightly smaller font */
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        background-color: #575757;
+    }
+}
+
+
+
+
+/* Full-Screen About Section */
+.full-screen {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #B8B8B8;
+    padding: 120px 20px;
+    margin-top: 70px;
+}
+
+/* Ensure No Overlap for Specific Sections */
+#education, #projects, #cv, #contact {
+    padding: 120px 20px;
+    margin-top: 0.5px;
+}
+
+/* About Section */
+#about {
     background-color: #333;
     color: white;
+    text-align: center;
+    padding: 120px 20px;
+    margin-top: 70px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Profile Picture */
+.profile-picture {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* About Text */
+.about-text {
+    max-width: 600px;
+    text-align: center;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    color: #FFD700;
+}
+
+.about-text p {
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* Skills Section */
+#skills {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    margin-top: 5px;
+}
+
+.skills-container {
+    max-width: 1000px;
+    margin: auto;
     padding: 20px;
 }
 
-section {
-    margin: 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.skills-container h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #FFD700;
 }
 
+.skills-container p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Grid Layout for Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Responsive: Single Column for Small Screens */
+@media screen and (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Skills Cards */
+.skills-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-card h3 {
+    font-size: 1.5rem;
+    color: #FFD700;
+}
+
+.skills-card ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.skills-card li {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Hover Effect */
+.skills-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Education Section */
+#education {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.education-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.education-container h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+.education-container p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Grid Layout */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Responsive: Single Column for Small Screens */
+@media screen and (max-width: 768px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Education Cards */
+.education-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card img {
+    width: 120px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.education-card h3 {
+    font-size: 1.5rem;
+    color: #FFD700;
+}
+
+.education-card p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Hover Effects */
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Projects Section */
+#projects {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.projects-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.projects-container h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+.projects-container p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Grid Layout for Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Project Cards */
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    color: #FFD700;
+}
+
+.project-card p, .project-card ul {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.project-card ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effect */
+.project-tile:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* CV Section */
+#cv {
+    background-color: #333; /* Removed duplicate #B8B8B8 definition */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 5px;
+}
+
+/* Make CV section wider to use more horizontal space */
+.cv-container {
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure CV PDF iframe takes full width of its container */
+.cv-container iframe {
+    display: block;
+    width: 100%; /* Simplified from 100vw with max-width */
+    height: 700px; /* Kept larger height as primary */
+    border: 4px solid rgba(255, 255, 255, 0.3); /* Moved from duplicate */
+    border-radius: 5px;
+    margin: 20px auto 0; /* Consolidated margin */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+    .cv-container {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cv-container {
+        width: 95%;
+    }
+}
+
+.cv-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #FFD700;
+}
+
+.cv-container p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* CV Download Button */
+.cv-download {
+    margin-top: 5px;
+}
+
+.cv-download button {
+    background-color: #FFD700;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Specified property for transition */
+}
+
+.cv-download button:hover {
+    background-color: #ffcc00;
+}
+
+/* Footer Section */
 footer {
     background-color: #333;
     color: white;
-    padding: 10px;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 5px; /* Fixed invalid 'x' value */
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Contact Info */
+.footer-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-info ul li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-info a {
+    text-decoration: none;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;
+}
+
+/* Social Icons */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-social a img {
+    transition: transform 0.3s ease;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.2);
+}
+
+/* Footer Bottom */
+.footer-bottom {
     margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* 📱 Responsive Design Fixes for Mobile & Tablets */
+@media screen and (max-width: 1024px) {
+    section {
+        padding: 60px 15px;
+        margin: 30px 0;
+    }
+
+    .full-screen {
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 15px;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    .skills-grid, .education-grid, .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        padding: 50px 10px;
+        margin: 20px 0;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 130px;
+        height: 130px;
+    }
+
+    .skills-grid, .education-grid, .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
 }
