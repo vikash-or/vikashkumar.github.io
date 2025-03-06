@@ -3,39 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vikash's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Website</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
 </head>
 <body>
-    <!-- Navigation Menu -->
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
-    </nav>
 
-    <!-- Sections -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Information about yourself.</p>
-    </section>
+<!-- Navigation Menu -->
+<nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div> <!-- Hamburger Icon -->
+    <ul id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#cv">CV</a></li>
+    </ul>
+</nav>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <p>Details about your skills.</p>
-    </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <p>Details about your education.</p>
-    </section>
+<!-- About Section -->
+<section id="about">
+    <div class="about-container">
+        <!-- Profile Picture -->
+        <div class="profile-picture">
+            <img src="final.png" alt="Vikash" class="profile-pic">
+        </div>
+        
+        <!-- About Me Text -->
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>Hi, I'm Vikash, currently pursuing my Master of Operational Research at the University of Delhi.</p>
+            <p>I am open to new opportunities to collaborate and learn. Feel free to check out my projects and skills to learn more about my work!</p>
+        </div>
+    </div>
+</section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Details about your projects.</p>
-    </section>
+
+
+    <!-- Skills Section -->
+<section id="skills">
+    <div class="skills-container">
+        <h2>Technical Skills</h2>
+        <!-- <p>Here are some of my core technical skills and expertise.</p> -->
+
+        <div class="skills-grid">
+            <!-- Programming Languages -->
+            <div class="skills-card">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li><strong>Python</strong>: NumPy, Pandas, Matplotlib, Seaborn, BeautifulSoup</li>
+                    <li><strong>C++</strong>: Data Structures and Algorithms (DSA)</li>
+                    <li><strong>PHP</strong>: Web development and server-side scripting</li>
+                </ul>
+            </div>
+
+            <!-- Data Science & Machine Learning -->
+            <div class="skills-card">
+                <h3>Data Science & Machine Learning</h3>
+                <ul>
+                    <li><strong>Supervised Learning</strong>: Classification, Regression</li>
+                    <li><strong>Machine Learning</strong>: Model evaluation and optimization</li>
+                </ul>
+            </div>
+
+            <!-- Databases -->
+            <div class="skills-card">
+                <h3>Databases</h3>
+                <ul>
+                    <li><strong>MySQL</strong>: Database design and queries</li>
+                    <li><strong>MSSQL</strong>: Advanced SQL and data management</li>
+                </ul>
+            </div>
+
+            <!-- Tools -->
+            <div class="skills-card">
+                <h3>Tools</h3>
+                <ul>
+                    <li><strong>LaTeX</strong>: Documentation, academic reports</li>
+                    <li><strong>BeautifulSoup</strong>: Web scraping and data extraction</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+      
+
+    <!-- Education Section -->
+<section id="education">
+    <div class="education-container">
+        <h2>Academic Qualifications</h2>
+        <!-- <p>My educational journey and achievements.</p> -->
+
+        <div class="education-grid">
+            <!-- Degree 1 -->
+            <div class="education-card">
+                <a href="https://www.du.ac.in/" target="_blank">
+                    <img src="DU.jpg" alt="Delhi University">
+                </a>
+                <h3>Master of Operational Research</h3>
+                <p><strong>Year:</strong> 2024 - Present</p>
+                <p><strong>Institute:</strong> University of Delhi</p>
+                <p><strong>Expected Graduation:</strong> 2026</p>
+            </div>
+
+            <!-- Degree 2 -->
+            <div class="education-card">
+                <img src="DU.jpg" alt="University of Delhi">
+                <h3>B.Sc. Mathematical Sciences</h3>
+                <p><strong>Year:</strong> 2024</p>
+                <p><strong>Institute:</strong> University of Delhi</p>
+                <p><strong>CGPA:</strong> 8.818</p>
+            </div>
+
+            <!-- Degree 3 -->
+            <div class="education-card">
+                <img src="jnv.avif" alt="JNV Samastipur">
+                <h3>CBSE (XII)</h3>
+                <p><strong>Year:</strong> 2021</p>
+                <p><strong>Institute:</strong> Jawahar Navodaya Vidyalaya, Samastipur</p>
+                <p><strong>Marks:</strong> 89.4%</p>
+            </div>
+
+            <!-- Degree 4 -->
+            <div class="education-card">
+                <img src="jnv.avif" alt="JNV Samastipur">
+                <h3>CBSE (X)</h3>
+                <p><strong>Year:</strong> 2019</p>
+                <p><strong>Institute:</strong> Jawahar Navodaya Vidyalaya, Samastipur</p>
+                <p><strong>Marks:</strong> 94.8%</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Projects Section -->
+<section id="projects">
+    <div class="projects-container">
+        <h2>My Projects</h2>
+        
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>Student Performance Prediction</h3>
+                <p>Developed a predictive model using Multiple Linear Regression to analyze student performance.</p>
+                <ul>
+                    <li>Exploratory Data Analysis (EDA) with visualizations.</li>
+                    <li>Feature engineering and selection for optimization.</li>
+                    <li>Achieved high accuracy (R² = 0.99 on test data).</li>
+                </ul>
+                <p><strong>Tools Used:</strong> Python, NumPy, Pandas, Scikit-Learn</p>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>Cricket Statistics Web Scraping</h3>
+                <p>Scraped and analyzed Men’s ODI Cricket statistics using Python.</p>
+                <ul>
+                    <li>Extracted data from BCCI website using BeautifulSoup.</li>
+                    <li>Performed cleaning and structured data storage.</li>
+                    <li>Visualized trends using histograms and statistical analysis.</li>
+                </ul>
+                <p><strong>Tools Used:</strong> Python, BeautifulSoup, Pandas, Matplotlib, Seaborn</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- CV Section -->
+<section id="cv">
+    <div class="cv-container">
+        <h2>My CV</h2>
+        <!-- <p>Feel free to download and view my CV.</p> -->
+        <iframe src="Vikash_Kumar_cv.pdf??embedded=true" width="100%" height="800px"></iframe>
+        <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+
+    </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-info">
+            <h3>Contact Me</h3>
+            <ul>
+                <li>
+                    <img src="email-icon.png" width="17px" alt="Email Icon"> 
+                    <a href="mailto:vikashkumar.du.or.26@gmail.com">vikashkumar.du.or.26@gmail.com</a>
+                </li>
+                <li>
+                    <img src="linked-in-icon.png" width="17px" alt="LinkedIn Icon">
+                    <a href="https://www.linkedin.com/in/vikash-kumar-ms/" target="_blank">LinkedIn</a>
+                </li>
+                <li>
+                    <img src="github.png" width="17px" alt="GitHub Icon">
+                    <a href="https://github.com/vik3516" target="_blank">GitHub</a>
+                </li>
+            </ul>
+        </div>
+        
+       
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Vikash Kumar | All Rights Reserved</p>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
 </body>
 </html>
+
+
